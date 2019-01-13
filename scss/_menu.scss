@@ -1,0 +1,85 @@
+@import 'config';
+.control-box{
+  //  background: darken($color:$primary-color, 5);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:  translate(-50%, -50%);
+    width:500px;
+    height: 500px;
+    float:left;
+    align-items: center;
+    color:white;
+    z-index: 5;
+    h1{
+        font-size: 40px;
+        text-align: center;
+    }
+    .operator{
+        display: grid;
+        grid-template-areas: "controls mode-change";
+        grid-template-columns: repeat(2, 1fr);
+
+        .controls{
+            width: 100%;
+            float: left;
+            width:100%;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            margin-top:150px; 
+            .side{
+                display: grid;
+                grid-template-areas: "left between right";
+                grid-template-columns: repeat(3,1fr);
+                margin-top: 15px;
+               
+                
+            }
+            .up, .down{
+                //display: block;
+                margin-left:35px;
+            
+            }
+            .down{
+                margin-top: 0;
+            }
+           
+        }
+        .mode-change{
+           
+            button{
+                margin-left: 150px;
+                margin-top:120px; 
+                background: none;
+                border: solid green 2px;
+                color:white;
+                cursor:pointer;
+                position: absolute;
+
+                &:hover{
+                    font-size: 15px;
+                    background: green;
+                    @include easeOut;
+                }
+            }
+        }
+    }
+
+     //background: green;
+    
+    
+    
+  }
+  i{
+      cursor: pointer;
+      &:hover{
+          color:green;
+         // font-size:15px;
+          @include easeOut;
+      }
+  }
+  .hide{
+      visibility: hidden;
+      width: 0%;
+  }
